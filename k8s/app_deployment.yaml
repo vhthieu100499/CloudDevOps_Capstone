@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaskapp-capstone-blue
+  labels:
+    app: flaskapp-capstone
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flaskapp-capstone
+  template:
+    metadata:
+      labels:
+        app: flaskapp-capstone
+        version: v1
+    spec:
+      containers:
+      - name: flaskapp-capstone
+        image: vhthieu100499/flaskapp_capstone:latest
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: "500m"
+          requests:
+            cpu: "200m"
