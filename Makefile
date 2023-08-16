@@ -22,18 +22,6 @@ install:
 	# sudo chmod +x bin/upload_docker.sh
 	# sudo chmod +x bin/k8s_deployment.sh
 	# sudo chmod +x bin/install_eksctl.sh
-		
-	# Install hadolint
-	echo "Installing hadolint"
-	./bin/install_hadolint.sh
-
-	# Install kubectl
-	echo "installing kubectl"
-	./bin/install_kubectl.sh
-	
-	#Install eks ctl
-	echo "Installing eksctl"
-	./bin/install_eksctl.sh
 	
 build-docker:
 	./bin/run_docker.sh
